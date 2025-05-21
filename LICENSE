@@ -11,24 +11,3 @@ Permission is granted for academic and non-commercial use only.
 For commercial licensing, please contact the author.
 
 
----
-
-### 📄 `Makefile`
-
-```make
-CC = gcc
-CFLAGS = -Wall -Wextra -O2 -I./src
-
-SRC = src/csek.c
-OBJ = $(SRC:.c=.o)
-
-all: demo test
-
-demo: examples/demo.c $(OBJ)
-	$(CC) $(CFLAGS) -o examples/demo examples/demo.c $(OBJ)
-
-test: tests/test_csek.c $(OBJ)
-	$(CC) $(CFLAGS) -o tests/test_csek tests/test_csek.c $(OBJ)
-
-clean:
-	rm -f src/*.o examples/demo tests/test_csek
